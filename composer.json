@@ -14,13 +14,13 @@
     },
     "autoload": {
         "psr-4": {
-            "mukulsmu\\LaravelNovaPermission\\": "src/"
+            "Mukulsmu\\LaravelNovaPermission\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "mukulsmu\\LaravelNovaPermission\\NovaPermissionServiceProvider"
+                "Mukulsmu\\LaravelNovaPermission\\NovaPermissionServiceProvider"
             ]
         }
     },
