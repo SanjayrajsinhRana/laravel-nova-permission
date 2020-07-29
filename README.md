@@ -5,7 +5,7 @@
  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mukulsmu/laravel-nova-permission/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mukulsmu/laravel-nova-permission/?branch=master)
  [![Total Downloads](https://poser.pugx.org/mukulsmu/laravel-nova-permission/downloads)](https://packagist.org/packages/mukulsmu/laravel-nova-permission)
 
-Fork of abondoned library [mukulsmu/laravel-nova-permission](https://github.com/mukulsmu/laravel-nova-permission)
+Fork of abondoned library [insenseanalytics/laravel-nova-permission](https://github.com/insenseanalytics/laravel-nova-permission)
 
 Not production ready yet, currently writing tests to improve package stability and to develop upgrade path.  
 
