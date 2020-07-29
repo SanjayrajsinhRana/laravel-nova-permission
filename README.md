@@ -5,6 +5,10 @@
  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/insenseanalytics/laravel-nova-permission/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/insenseanalytics/laravel-nova-permission/?branch=master)
  [![Total Downloads](https://poser.pugx.org/insenseanalytics/laravel-nova-permission/downloads)](https://packagist.org/packages/insenseanalytics/laravel-nova-permission)
 
+Fork of abondoned library [insenseanalytics/laravel-nova-permission](https://github.com/insenseanalytics/laravel-nova-permission)
+
+Not production ready yet, currently writing tests to improve package stability and to develop upgrade path.  
+
 This [Nova](https://nova.laravel.com) tool lets you:
 - manage roles and permissions on the Nova dashboard
 - use permissions based authorization for Nova resources
