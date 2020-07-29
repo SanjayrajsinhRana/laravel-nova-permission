@@ -1,11 +1,11 @@
 # A Laravel Nova tool for the Spatie Permission package
 
- [![License](https://poser.pugx.org/insenseanalytics/laravel-nova-permission/license)](https://packagist.org/packages/insenseanalytics/laravel-nova-permission)
- [![Latest Stable Version](https://poser.pugx.org/insenseanalytics/laravel-nova-permission/v/stable)](https://packagist.org/packages/insenseanalytics/laravel-nova-permission)
- [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/insenseanalytics/laravel-nova-permission/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/insenseanalytics/laravel-nova-permission/?branch=master)
- [![Total Downloads](https://poser.pugx.org/insenseanalytics/laravel-nova-permission/downloads)](https://packagist.org/packages/insenseanalytics/laravel-nova-permission)
+ [![License](https://poser.pugx.org/mukulsmu/laravel-nova-permission/license)](https://packagist.org/packages/mukulsmu/laravel-nova-permission)
+ [![Latest Stable Version](https://poser.pugx.org/mukulsmu/laravel-nova-permission/v/stable)](https://packagist.org/packages/mukulsmu/laravel-nova-permission)
+ [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mukulsmu/laravel-nova-permission/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mukulsmu/laravel-nova-permission/?branch=master)
+ [![Total Downloads](https://poser.pugx.org/mukulsmu/laravel-nova-permission/downloads)](https://packagist.org/packages/mukulsmu/laravel-nova-permission)
 
-Fork of abondoned library [insenseanalytics/laravel-nova-permission](https://github.com/insenseanalytics/laravel-nova-permission)
+Fork of abondoned library [mukulsmu/laravel-nova-permission](https://github.com/mukulsmu/laravel-nova-permission)
 
 Not production ready yet, currently writing tests to improve package stability and to develop upgrade path.  
 
@@ -14,7 +14,7 @@ This [Nova](https://nova.laravel.com) tool lets you:
 - use permissions based authorization for Nova resources
 
 ## Screenshots
-<img alt="screenshot of the backup tool" src="https://insenseanalytics.github.io/public-assets/laravel-nova-permission/nova-permission-screenshot.png" />
+<img alt="screenshot of the backup tool" src="https://mukulsmu.github.io/public-assets/laravel-nova-permission/nova-permission-screenshot.png" />
 
 ## Requirements & Dependencies
 There are no PHP dependencies except the [Laravel Nova](https://nova.laravel.com) package and the [Spatie Permission](https://github.com/spatie/laravel-permission) package.
@@ -23,14 +23,14 @@ There are no PHP dependencies except the [Laravel Nova](https://nova.laravel.com
 You can install this tool into a Laravel app that uses [Nova](https://nova.laravel.com) via composer:
 
 ```bash
-composer require insenseanalytics/laravel-nova-permission
+composer require mukulsmu/laravel-nova-permission
 ```
 
 Next, if you do not have package discovery enabled, you need to register the provider in the `config/app.php` file.
 ```php
 'providers' => [
     ...,
-    Insenseanalytics\LaravelNovaPermission\NovaPermissionServiceProvider::class,
+    Mukulsmu\LaravelNovaPermission\NovaPermissionServiceProvider::class,
 ]
 ```
 
@@ -43,7 +43,7 @@ public function tools()
 {
     return [
         // ...
-        \Insenseanalytics\LaravelNovaPermission\LaravelNovaPermission::make(),
+        \Mukulsmu\LaravelNovaPermission\LaravelNovaPermission::make(),
     ];
 }
 ```
@@ -57,8 +57,8 @@ public function fields(Request $request)
 {
     return [
         // ...
-        MorphToMany::make('Roles', 'roles', \Insenseanalytics\LaravelNovaPermission\Role::class),
-        MorphToMany::make('Permissions', 'permissions', \Insenseanalytics\LaravelNovaPermission\Permission::class),
+        MorphToMany::make('Roles', 'roles', \Mukulsmu\LaravelNovaPermission\Role::class),
+        MorphToMany::make('Permissions', 'permissions', \Mukulsmu\LaravelNovaPermission\Permission::class),
     ];
 }
 ```
@@ -73,7 +73,7 @@ Finally, add the `ForgetCachedPermissions` class to your `config/nova.php` middl
 	DispatchServingNovaEvent::class,
 	BootTools::class,
 	Authorize::class,
-	\Insenseanalytics\LaravelNovaPermission\ForgetCachedPermissions::class,
+	\Mukulsmu\LaravelNovaPermission\ForgetCachedPermissions::class,
 ],
 ```
 
@@ -82,7 +82,7 @@ Finally, add the `ForgetCachedPermissions` class to your `config/nova.php` middl
 You can use the artisan command line tool to publish localization files:
 
 ```php
-php artisan vendor:publish --provider="Insenseanalytics\LaravelNovaPermission\NovaPermissionServiceProvider"
+php artisan vendor:publish --provider="Mukulsmu\LaravelNovaPermission\NovaPermissionServiceProvider"
 ```
 
 ## Using Custom Role/Permission Resource Classes
@@ -96,7 +96,7 @@ public function tools()
 {
     return [
         // ...
-        \Insenseanalytics\LaravelNovaPermission\LaravelNovaPermission::make()
+        \Mukulsmu\LaravelNovaPermission\LaravelNovaPermission::make()
             ->roleResource(CustomRole::class)
             ->permissionResource(CustomPermission::class),
     ];
@@ -113,7 +113,7 @@ To do so, you can use the `PermissionsBasedAuthTrait` and define a `permissionsF
 
 class YourNovaResource extends Resource
 {
-    use \Insenseanalytics\LaravelNovaPermission\PermissionsBasedAuthTrait;
+    use \Mukulsmu\LaravelNovaPermission\PermissionsBasedAuthTrait;
 
     public static $permissionsForAbilities = [
       'all' => 'manage products',
